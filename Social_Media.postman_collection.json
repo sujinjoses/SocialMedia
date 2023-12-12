@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "7b92d80f-5849-4d52-8b74-b7da07aa845c",
+		"name": "Social_Media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15645445"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/accounts/user_register/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tester@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Tester12#",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "Tester12#",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Tester",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Man",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/accounts/user_register/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api-token-auth/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "tester@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Tester12#",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api-token-auth/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/user_list/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://127.0.0.1:8000/accounts/user_list/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/friend_request/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "requestee",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/accounts/friend_request/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/accept_reject/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/accounts/accept_reject/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/pending_friends/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://127.0.0.1:8000/accounts/pending_friends/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/list_friends/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://127.0.0.1:8000/accounts/list_friends/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/list_rejected/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://127.0.0.1:8000/accounts/list_rejected/"
+			},
+			"response": []
+		}
+	]
+}
